@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-prometheus-app
 spec:
-  replicas: {{ .Values.my-app.replicas }}
+  replicas: {{ .Values.myapp.replicas }}
   selector:
     matchLabels:
       app: prometheus

@@ -12,5 +12,5 @@ Prometheus:
   enabled: true
   replicas: 1
 
-my-app:
+myapp:
   replicas: 1
