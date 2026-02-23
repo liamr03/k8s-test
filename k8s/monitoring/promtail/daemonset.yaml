@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: promtail
+  namespace: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: promtail
+  template:
+    metadata:
+      labels:
+        app: promtail
+    spec:
+      containers:
+        - name: promtail
+          image: grafana/promtail
+          args:
+            - "-config.file=/etc/promtail/config.yml"
+          volumeMounts:
+            - mountPath: /etc/promtail/config.yml
+              name: config-volume
+              subPath: config.yml
+            - mountPath: /var/log/pods
+              name: host-logs
+      volumes:
+        - name: host-logs
+          hostPath:
+            path: /var/log/pods
+        - name: config-volume
+          configMap:
+            name: promtail
