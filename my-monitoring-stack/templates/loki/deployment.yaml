@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: loki
-          image: grafana/loki:2.9.3
+          image: "{{ .Values.loki.image.repository }}:{{ .Values.loki.image.tag }}"
           ports:
             - containerPort: 3100
           args:

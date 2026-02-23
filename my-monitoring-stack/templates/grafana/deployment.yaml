@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: grafana
-  namespace: monitoring
+  name: {{ .Release.Name }}-grafana
+  namespace: {{ .Release.Namespace }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: grafana
+      app: {{ .Release.Name }}-grafana
   template:
     metadata:
       labels:
-        app: grafana
+        app: {{ .Release.Name }}-grafana
     spec:
       containers:
         - name: grafana
