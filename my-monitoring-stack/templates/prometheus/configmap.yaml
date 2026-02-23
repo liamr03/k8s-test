@@ -13,4 +13,4 @@ data:
         scrape_interval: {{ .Values.prometheus.scrapeInterval }}
         static_configs:
           - targets: ['my-prometheus-entrypoint:80']
-{{ - end }}
+{{- end }}
