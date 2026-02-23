@@ -4,10 +4,9 @@ loki:
     tag: 2.9.3
   replicas: 1
 
-NodePort:
-  nodePort: 30002
+nodePort: 30002
 
-Prometheus:
+prometheus:
   scrapeInterval: "30s"
   enabled: true
   replicas: 1
