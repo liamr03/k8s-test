@@ -11,5 +11,8 @@ prometheus:
   enabled: true
   replicas: 1
 
+grafana:
+  replicas: 1
+
 myapp:
   replicas: 1
