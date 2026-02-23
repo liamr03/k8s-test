@@ -2,6 +2,15 @@ loki:
   image:
     repository: grafana/loki
     tag: 2.9.3
+  replicas: 1
 
 NodePort:
   nodePort: 30002
+
+Prometheus:
+  scrapeInterval: "30s"
+  enabled: true
+  replicas: 1
+
+my-app:
+  replicas: 1

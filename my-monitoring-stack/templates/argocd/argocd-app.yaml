@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/liamr03/k8s-test.git
     targetRevision: main
-    path: k8s-test
+    path: my-monitoring-stack
     helm:
       valueFiles:
         - values.yaml

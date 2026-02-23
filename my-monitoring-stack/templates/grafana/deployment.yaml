@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-grafana
+  name: {{ include "grafana.fullname" . }}
   namespace: {{ .Release.Namespace }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.Prometheus.replicas }}}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}-grafana
+      app: {{ include "grafana.fullname" . }}
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}-grafana
+        app: {{ include "grafana.fullname" . }}
     spec:
       containers:
         - name: grafana

@@ -1,3 +1,4 @@
+{{- if .Values.prometheus.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -9,6 +10,7 @@ data:
       scrape_interval: 15s
     scrape_configs:
       - job_name: 'my-java-app'
-        scrape_interval: 5s
+        scrape_interval: {{ .Values.prometheus.scrapeInterval }}
         static_configs:
           - targets: ['my-prometheus-entrypoint:80']
+{ { - end } }
