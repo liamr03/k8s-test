@@ -4,7 +4,7 @@ metadata:
   name: {{ include "grafana.fullname" . }}
   namespace: {{ .Release.Namespace }}
 spec:
-  replicas: {{ .Values.Prometheus.replicas }}}
+  replicas: {{ .Values.Prometheus.replicas }}
   selector:
     matchLabels:
       app: {{ include "grafana.fullname" . }}
